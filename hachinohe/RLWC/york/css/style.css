@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'RLWC';
+    src:
+            local('RLWC-2021'),
+            url('../webfonts/RLWC_2021_SANS.otf')
+            format('opentype');
+}
+
+.headerBox__title{
+    font-size: 4rem;
+    font-weight: normal;
+    font-family: RLWC;
+}
+
+.font-RLWC{
+    font-family: RLWC !important;
+}

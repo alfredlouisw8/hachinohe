@@ -1,0 +1,1595 @@
+/*default version*/
+/*@font-face {*/
+/*    font-family: 'RLWC';*/
+/*    src:*/
+/*            local('RLWC-2021'),*/
+/*            url('../fonts/RLWC_2021_SANS.otf')*/
+/*            format('opentype');*/
+/*}*/
+
+/** {*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+html{
+    background-color: white;
+    font-size: min(4vw,16px);
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    margin: 0px;
+    /*overflow-x: hidden;*/
+}
+
+.iframe-container {
+    /*overflow: hidden;*/
+    display: block;
+}
+
+.nav{
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 90px;
+    width: 100%;
+    /*padding: .7em .7em .7em .5em;*/
+    display: flex;
+    font-size: 1em;
+    background: url(https://www.rlwc2021.com/themes/rlwc/_img/nav-bg.png) repeat-x;
+    box-sizing: border-box;
+}
+
+.logo-separator {
+    height: 78%;
+    width: 10px;
+    border-right: 1px solid #938a8a;
+    margin-top: 10px;
+}
+
+.nav__logo,.nav__cityLogo{
+    height: 100%;
+    width: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 1em;
+}
+
+.nav__cityLogo{
+    background-color: white;
+    box-sizing: border-box;
+    background-size: 80%;
+    margin: 10px;
+    height: 70px;
+}
+
+.nav__logo {
+    background-image: url(../images/RLWC_logo.svg);
+    background-size: 94%;
+    margin: -.1em .8em 0 .15em;
+    width: 181px;
+    background-position: 7.5px 1.5px;
+}
+
+.headerBox{
+    display: block;
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
+.headerBox__overlay{
+    overflow:hidden;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+.headerBox__ribbons{
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    background-image: url(../images/ribbons.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
+    top: calc(100% - 72px);
+}
+
+.headerBox__heroImage{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.headerBox__title, .headerBox__subtitle{
+    display: block;
+    width: 98%;
+    max-width: 750px;
+    margin: 15px auto;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+}
+
+.headerBox__title{
+    font-size: 4rem;
+    font-weight: normal;
+    font-family: RLWC;
+}
+
+.headerBox__subtitle{
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.4pt;
+    padding-bottom: 50px;
+}
+
+.accordion{
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-top: 2px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.accordion-activities{
+    border-bottom: 2px solid;
+}
+
+.accordion-title{
+    font-size: 1.2rem;
+    font-weight: normal;
+    display: block;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    background-size: 1.1rem;
+    background-position: 96% center;
+    background-repeat: no-repeat;
+    padding: 10px 0px 20px 0px;
+}
+
+.accordion .accordion-title{
+    background-image: url('../images/accordion_plus.png');
+}
+
+.accordion.accordion--active .accordion-title{
+    background-image: url('../images/accordion_minus.png');
+}
+
+.results-container{
+    width: 100%;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity .8s ease-out;
+}
+
+.empty-result{
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 100px;
+    font-weight: 600;
+}
+
+.accordion.accordion--active .results-container{
+    height: auto;
+    opacity: 1;
+    transition: opacity .8s ease-in;
+}
+
+
+
+.footerBox{
+    display: block;
+    width: 100%;
+    height: 435px;
+    background-image: url('../images/footer_purplewave.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    /*bottom:0px;*/
+}
+
+.footerBox_wrapper{
+    overflow: hidden;
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    line-height: 1.5;
+}
+
+.footerBox__sosmed, .footerBox_policy{
+    display: inline-block;
+    width: 49%;
+    min-height: 30px;
+    float: left;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.footerBox_policy{
+    margin-top: 5px;
+    box-sizing: border-box;
+    padding-right: 5px;
+}
+
+.footerBox_policy a{
+    display: block;
+    margin-bottom: 40px;
+}
+
+.sosmed__title{
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sosmed__link{
+    display: inline;
+    height: 40px;
+    width: 40px;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+    position: relative;
+    left: -2px;
+}
+
+.footerBox_policy a{
+    color: white;
+    text-decoration: none;
+}
+
+.no-results-notice{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: grey;
+    letter-spacing: .5px;
+}
+
+.wishlist{
+    width: 95%;
+    display: block;
+    margin: 100px auto;
+    min-height: calc(100vh - 1145px);
+    max-width: 1100px;
+    font-family: inherit;
+}
+
+.wishlist__title{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.accommodation.ticketDate,
+.activity.ticketDate{
+    display: none;
+}
+
+.ticketDate {
+    margin: 5px 0px;
+    font-size: .9rem;
+    color: black;
+    font-weight: 600;
+    /*letter-spacing: 1.5px;*/
+}
+
+.Manchester .wishlist__title::before{
+    content: 'Build your Squad Trip for Manchester';
+}
+
+.Newcastle .wishlist__title::before{
+    content: 'Build your Squad Trip for Newcastle';
+}
+
+.wishlist__title::after {
+    content: " ";
+    display: block;
+    border-bottom: 2px solid #e5e5e5;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.wishlist__subtitle{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 4em;
+    font-weight: 300;
+    letter-spacing: 0.4pt;
+}
+
+.themeColor{
+    color: rgb(90 14 162) !important;
+}
+
+.themeBackColor{
+    background-color: rgb(90 14 162) !important;
+}
+
+.themeBorderColor{
+    border-color: #80808085 !important;
+    border-width: 1px!important;
+}
+
+
+
+.header-nav{
+    background-color: white;
+}
+
+.header-hidden, .footer-hidden{
+    display: none;
+}
+
+.page-contents.type-bgcolor:before, .page-contents.type-bgcolor:after{
+    background-color: transparent!important;
+}
+
+.select-search{
+    display: inline-block;
+    vertical-align: top;
+    background-color: #F2F2F2;
+    padding: 0.3em 0.3em 0.3em 0.8em;
+    line-height: 2em;
+    text-decoration: none;
+    font-size: 1.3125rem;
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    width: 24%;
+}
+
+.input-search{
+    width: 32%;
+}
+
+.input-search input[type=text]{
+    border: 1px solid grey;
+    padding: 0.4em 1.2em;
+    height: 68px;
+}
+
+.btn-search{
+    width: 16%;
+}
+
+.center-items{
+    text-align: center;
+}
+
+.center-items > .btn-yellow{
+    float: none !important;
+    margin-top: 10px;
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+.preview-body {
+    scrollbar-width: thin;
+    scrollbar-color: lightgrey white;
+}
+
+/* Works on Chrome/Edge/Safari */
+.preview-body::-webkit-scrollbar {
+    width: 12px;
+}
+
+.preview-body::-webkit-scrollbar-track {
+    background: white;
+}
+
+.preview-body::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+.cart-modal-body {
+    scrollbar-width: thin;
+    scrollbar-color: lightgrey white;
+}
+
+/* Works on Chrome/Edge/Safari */
+.cart-modal-body::-webkit-scrollbar,
+.notice-content::-webkit-scrollbar{
+    width: 12px;
+}
+
+.cart-modal-body::-webkit-scrollbar-track,
+.notice-content::-webkit-scrollbar-track{
+    background: white;
+}
+
+.cart-modal-body::-webkit-scrollbar-thumb,
+.notice-content::-webkit-scrollbar-thumb{
+    background-color: lightgrey;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.btn-yellow{
+    border:1px solid;
+    border-color: #ffbb33!important;
+    color: #ffbb33!important;
+    margin-bottom: 5px;
+    width: auto;
+    max-width: 300px;
+    display: inline-block;
+    float: left;
+    padding: 5px 28px 5px 7px !important;
+    margin-right: 2px;
+}
+
+.magnifier-btn{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    background-image: url('../images/magnifier.png');
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+}
+
+.btn-close-preview, .btn-close-cart-modal{
+    display: inline-block;
+    float: right;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    background-image: url('../images/close.svg');
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.btn-close-preview:hover{
+    cursor: pointer;
+}
+
+.btn-yellow:hover{
+    background-color: #ffbb33!important;
+    color: white!important;
+}
+
+.btn.btn-yellow:before{
+    border-color: transparent transparent transparent #ffbb33!important;
+}
+
+.page-contents.type-bgcolor:after {
+    left: 0%!important;
+    margin-left: 0px !important;
+}
+
+.page-contents-wrap {
+    overflow: unset!important;
+}
+
+.search-wrapper{
+    margin-right: 1%;
+}
+
+.select-search select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1.3125rem;
+    cursor: pointer;
+    width: 78%;
+    margin-right: 0px;
+}
+.search-keyword{
+    height: 63px;
+    width:100%;
+}
+
+.search-btn, .continue-btn{
+    background-color: #000;
+    color: #fff;
+    font-weight: 400;
+    font-family: ten-mincho, serif;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+
+.mybtn{
+    padding: 0.3em 1em;
+    line-height: 1.5em;
+    font-size: 1.2rem;
+}
+
+.btn-primary{
+    background-color: rgb(90 14 162);
+    color: #fff;
+    font-weight: 400;
+    font-family: inherit;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    border: 1px solid rgb(90 14 162);
+}
+
+.btn-secondary{
+    background-color: white;
+    border: 2px solid rgb(90 14 162);
+    color: rgb(90 14 162);
+    font-size: 1rem;
+    padding: .7em 2.2em;
+    width: auto;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-secondary:hover{
+    border-color: #8924e9;
+    color: #8924e9;
+}
+
+.add-btn.LT-14{
+    background-image: url('../images/accordion_plus.png');
+    background-position: .5rem center;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+}
+
+.add-btn.LT-19{
+    background-image: url('../images/checked.png');
+    background-position: .5rem center;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+}
+
+.preview-btn{
+    /*background-image: url('../images/eye.png');*/
+    /*background-position: .5rem center;*/
+    /*background-size: 1.3rem;*/
+    /*background-repeat: no-repeat;*/
+}
+
+.btn-primary:hover{
+    background-color: rgb(136 36 231);
+}
+
+.btn-white{
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    font-family: ten-mincho, serif;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    border: 1px solid black;
+}
+
+.btn-white:hover{
+    background-color: whitesmoke;
+}
+
+.search-btn{
+    padding: 13px 23px 13px 23px;
+    line-height: 2em;
+    font-size: 1.3125rem;
+}
+.continue-btn {
+    padding: 13px 20px 13px 20px;
+    line-height: 1rem;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.cart-modal-footer > .continue-btn{
+    width: auto;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.product-holder {
+    min-width: 90%;
+    margin: auto !important;
+}
+.products-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.results-column {
+    width: calc(70% - 30px);
+    margin-right: 30px;
+}
+
+.cart-column{
+    width:30%;
+    padding-bottom: 200px;
+}
+
+.results-activities{
+    border-bottom: 2px solid #bdbdbd;
+}
+
+.results-container ul.product-list,
+.results-container li.product-id {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.results-container .product-item{
+    overflow: hidden;
+}
+
+.results-container .product-price{
+    margin-top: 10px;
+}
+
+.product-price{
+    color:grey;
+}
+
+.results-container .product-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+}
+
+.results-container .product-image {
+    position: relative;
+    width: 40%;
+    display: inline-block;
+    min-height: 220px;
+    max-height: 220px;
+    margin-bottom: 5px;
+    float: left;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.results-container .product-details{
+    display: inline-block;
+    width: 50%;
+    float: left;
+    margin-left: 2%;
+    font-family: inherit;
+}
+
+@media (max-width: 617px) {
+    .results-container .product-image {
+        width: 100%;
+        display: block;
+
+    }
+
+    .results-container .product-details{
+        display: block;
+        width: 100%;
+        margin-left: 0px;
+    }
+}
+
+
+
+
+
+.product-details-header {
+    margin-bottom: 0px;
+}
+
+.preview-body .product-details{
+    width: 100%;
+}
+
+
+
+.area-info{
+    font-size: .75rem;
+}
+
+.material-icons{
+    font-size: .75rem;
+}
+
+
+
+.results-container .product-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin: 0px 0;
+    height: 2em;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+.results-container .product-subtitle {
+    -webkit-line-clamp: 1;
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.results-container .product-description-block {
+    font-size: 0;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.results-container .button-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+}
+
+.button-container > .btn-secondary{
+    margin-right: 1em;
+}
+
+.LT-14::before{
+    content:'Add'
+}
+
+.LT-19{
+    background-color: rgb(90 14 162) !important;
+    color: white !important;
+}
+
+.LT-19::before{
+    content:'Added'
+}
+
+.results-container .product-description-block > * {
+    display: none;
+}
+
+.results-container .product-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    font-size: 14px;
+    display: block;
+    height: 65px;
+    overflow:hidden;
+    font-weight: 300;
+    letter-spacing: 0.4pt;
+    word-break: break-word;
+}
+
+#results-activities .product-desc{
+    height: 53px;
+}
+
+button{
+    font-family: inherit;
+}
+
+.wishlist-sticky .booking-cart{
+    /*position: fixed !important;*/
+    top: 5px;
+    /*right: 5vw;*/
+    /*width: 23vw;*/
+    z-index: 100;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.03);
+    position:-webkit-sticky;
+    position:sticky;
+}
+
+.booking-cart {
+    background-color: white;
+    border: 1px solid black;
+    padding: 25px;
+    width: calc(100% - 55px);
+    min-height: 150px;
+    box-shadow: 0 2px 20px -10px rgba(0, 0, 0, 0.3);
+}
+
+.booking-cart__title{
+    line-height: 29px;
+    font-size: 23PX;
+    font-weight: 600;
+    font-family: inherit;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: left;
+    display: inline-block;
+    float: left;
+}
+
+.booking-cart__count{
+    display: inline-block;
+    float: right;
+    text-align: right;
+    line-height: 29px;
+    font-size: 17PX;
+    font-weight: 600;
+}
+
+
+.booking-cart__top{
+    text-align: center;
+    border-bottom: 1px solid;
+    overflow: hidden;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.book-btn-wrapper{
+    text-align: center;
+}
+
+.item-list--empty::before{
+    content: "Your wishlist is empty";
+}
+
+.cart-item-desc{
+    margin: 10px 0px 10px 0px;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+}
+
+.cart-results{
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.cart-item-desc .product-title{
+    font-size: 16px;
+    line-height: 22px;
+}
+
+b.product-title{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+b.product-address{
+    font-size: 14px;
+}
+
+#mapInfoBox p {
+    margin-bottom: 6px;
+}
+
+.cart-item-desc .product-price{
+    font-weight: bold;
+}
+
+.cart-button-container{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.cart-item-remove{
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: orangered;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.cart-button-container .mybtn{
+    padding: 5px 10px 5px 10px;
+    line-height: 25px;
+}
+
+.booking-cart ul,
+.booking-cart li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-select{
+    width: 100%;
+    font-size: 12px;
+}
+
+.cart-btn-mobile-wrapper{
+    display: none;
+    position: fixed;
+    bottom:5px;
+    left:10px ;
+    right: 10px;
+    z-index: 100;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+    border:1px solid white;
+    cursor: pointer;
+}
+
+.cart-btn-mobile{
+    height: 50px;
+    background-color: #5a0ea2;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.4rem;
+}
+
+.cart-btn-mobile > .booking-cart__title{
+    padding-bottom: 0px;
+    text-align: center;
+    width: auto;
+    height: 50px;
+    line-height: 40px;
+    margin-bottom: 0px;
+    float: none;
+}
+
+.cart-btn-mobile > .booking-cart__count{
+    float: none;
+    font-size: 1.4rem;
+}
+
+.cart-btn-mobile:hover{
+    background-color: #8228d8;
+}
+
+.basket-empty-message {
+    display: none;
+}
+
+.basket-empty .basket-empty-message {
+    display: block;
+}
+
+
+.svg-container {
+    height: auto;
+    width: 100%;
+    padding: 5px 0px;
+    position: absolute;
+    top: calc(100% - 6.1vw);
+    overflow: hidden;
+    min-height: 100px;
+}
+
+.more-btn-column {
+    margin: 60px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.more-btn-column .loader {
+    display: none;
+}
+
+.search-row {
+    disPlay: flex;
+    flex-wrap: wrap;
+    min-width: 90%;
+    margin: 0 auto 20px auto !important;
+}
+
+.search-row input, .search-row select{
+    height: 54px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+@media (max-width: 814px) {
+    .search-wrapper select{
+        width: 87%;
+    }
+    .search-wrapper{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-wrapper input[type=text]{
+        width: 100%;
+    }
+
+    .search-btn{
+        width: 100%;
+    }
+}
+
+@media (max-width: 892px) {
+    .results-column{
+        width: 100%;
+        margin: 0;
+    }
+
+    .cart-column{
+        display: none;
+    }
+
+    .cart-btn-mobile-wrapper{
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    /*.results-container .product-list {*/
+    /*  grid-template-columns: 1fr 1fr;*/
+    /*  */
+    /*}*/
+
+    .results-container .product-list {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+
+    .product-holder {
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .results-container .product-list {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+    .product-holder {
+        width: 99%;
+    }
+
+    .gm-style-iw.gm-style-iw-c{
+        max-width: 295px !important;
+    }
+
+    .results-column {
+        width: 100%;
+        margin: 0;
+    }
+
+    .results-container .button-container{
+        margin: 0 auto;
+    }
+}
+
+.itinerary-page h2{
+    position: initial!important;
+    margin: 0px !important;
+    padding: 0px 0px 0px!important;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/**Preview Modal*/
+
+.preview-body .product-title{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.price-container{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.preview-body{
+    padding: 0 1em;
+}
+
+.preview-body .product-details{
+    font-weight: 300;
+    letter-spacing: 0.4pt;
+    line-height: 15pt;
+    text-align: justify;
+}
+
+.preview-overlay, .cart-modal-overlay{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(68, 68, 68);
+    z-index: 8999;
+    opacity: 0.7;
+}
+
+.preview-container, .cart-modal-container{
+    position: fixed;
+    z-index: 9000;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+.warning-box{
+    background-color: white;
+    margin: 25vh auto;
+    padding-bottom: 15px;
+    width: calc(90% - 1.5rem);
+    max-width: 400px;
+    border-radius: 5px;
+    position: relative;
+    height: 95%;
+    display: block;
+    border: 1px solid darkgrey;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    font-size: 1rem;
+    max-height: 250px;
+    padding: 1.5em;
+}
+
+.notice-box{
+    background-color: white;
+    margin: 10px auto;
+    padding: 2em;
+    padding-bottom:15px;
+    width: calc(95% - 4em);
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+    height: 95%;
+    display: block;
+    border: 1px solid darkgrey;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    font-size: 14.3px;
+    max-height: 90vh;
+}
+
+.notice-content{
+    max-height: 82%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.notice-content  h4{
+    color:rgb(90 14 162);
+}
+
+.notice-content a{
+    color:#fe0000;
+    text-decoration: none;
+}
+
+.notice-title{
+    text-align: center;
+    font-size: 1.3rem;
+    color:rgb(90 14 162);
+    font-weight: 600;
+}
+
+.preview-box, .cart-modal-box{
+    background-color: white;
+    margin: 10px auto;
+    padding-bottom:15px;
+    width: 95%;
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+    height: 95%;
+    display: block;
+    border: 1px solid darkgrey;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    font-size: 14.3px;
+    max-height: 700px;
+}
+
+.preview-header{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+.preview-body, .cart-modal-body{
+    overflow: auto;
+    height: 84%;
+    width: calc(96% - 15px);
+    margin: 0 auto;
+}
+
+.col-product-details{
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px 1.5em;
+    box-sizing: border-box;
+}
+
+.cart-modal-body .booking-cart{
+    min-height: 94%;
+    border: 0px;
+    box-shadow: none;
+    padding: 3px;
+    width: 97%;
+}
+
+.col-product-details, .col-product-images{
+    display: block;
+    /*float: left;*/
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-info{
+    display: none !important;
+}
+
+.product-image-map{
+    display: block;
+    height: 150px;
+    width: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+
+#mapInfoBox{
+    overflow: hidden;
+    font-family: cardo, YuMincho, 游明朝, "Yu Mincho", YuMincho, serif;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    font-size: 16px;
+}
+
+.preview-footer, .cart-modal-footer{
+    height: 16%;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid;
+}
+
+
+
+.mybtn:hover{
+    cursor: pointer;
+}
+
+.slick-slide img {
+    height: 350px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    background-color: white;
+}
+/**Preview Modal*/
+
+.tab-title,
+.tab-header{
+    display: inline-block;
+    height: 100%;
+    padding: 5px 17px;
+}
+
+.tab-caption{
+    position: absolute;
+    top: 10px;
+}
+
+.tab-wrapper {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.tab-header{
+    border: 1px solid black;
+    background-color: #f3f3f3;
+    color: grey;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+
+#results-map{
+    width: 100%;
+    height: 550px;
+    top: 10px;
+}
+
+
+.tab-header-2{
+    left: 220px;
+}
+
+.tab-header.tab-header-active {
+    background-color: white;
+    font-weight: 600;
+    color: black;
+    margin-top: 1px;
+}
+
+.tab-headers-wrapper{
+    overflow: hidden;
+    min-width: 100px;
+    min-height: 30px;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+}
+
+
+.tab-headers{
+    display: block;
+    width: 97%;
+    overflow: hidden;
+    border-bottom:1px solid black;
+    height: 48px;
+    font-size: 18px !important;
+    line-height: 36px !important;
+}
+
+.tab{
+    display: none;
+}
+
+.tab-active{
+    display: block;
+}
+
+
+
+.slick-prev {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 !important;
+    height: 50%;
+    width: 30%;
+    background-image: url('../images/icon_left_arrow.png');
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 12px 20px;
+    text-indent: -9999px;
+    z-index: 10;
+}
+
+.slick-arrow{
+    background-color: transparent;
+    border: none;
+}
+
+.slick-arrow:focus{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.slick-next {
+    display: block;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    margin: 0 !important;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 30%;
+    background-image: url('../images/icon_right_arrow.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 12px 20px;
+    text-indent: -9999px;
+    z-index: 10;
+}
+
+.slick-dots {
+    margin: 10px !important;
+    padding: 0 !important;
+    list-style: none;
+    text-align: center;
+}
+
+
+
+.slick-dots > li {
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    background-color: #c3c3c3;
+    font-size: 0;
+    padding: 0;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+.slick-dots button{
+    display: none;
+}
+
+li.slick-active {
+    background-color: #5a0ea2 !important;
+}
+
+
+.slick-list {
+    width: 90%;
+    left: 5%;
+    background-color: black;
+}
+
+
+.Manchester .nav__cityLogo{
+    background-image: url('../images/city_logos/logo_manchester.png');
+}
+
+.Manchester .headerBox__heroImage{
+    background-image: url('../images/hero_images/hero_image_manchester.jpg');
+}
+
+.Manchester .headerBox__title::after{
+    content: 'SQUAD TRIPS MANCHESTER';
+}
+
+.Manchester .headerBox__subtitle::after{
+    content: 'Book Rugby League World Cup 2021 official tickets, accommodation and experiences - and take in the Men’s and Women’s Finals at the ‘Theatre of Dreams’ Old Trafford, in Manchester - one of the most vibrant and progressive cities in England.';
+}
+
+.Manchester .footerBox__copyright::before{
+    content: '';
+}
+
+.Newcastle .nav__cityLogo{
+    background-image: url('../images/city_logos/logo_newcastle.png');
+        background-color: transparent;
+}
+
+.Newcastle .headerBox__heroImage{
+    background-image: url('../images/hero_images/hero_image_newcastle.jpg');
+}
+
+
+.Newcastle .headerBox__title::after{
+    content: 'SQUAD TRIPS NEWCASTLE';
+}
+
+.Newcastle .headerBox__subtitle::after{
+    content: 'Book Rugby League World Cup 2021 official tickets, accommodation and experiences - and have an unforgettable trip to the vibrant culture and welcoming atmosphere of Newcastle, and the tournament’s opening weekend.';
+}
+
+.Newcastle .footerBox__copyright::before{
+    content: '';
+}
+
+.York .nav__cityLogo{
+    background-image: url('../images/city_logos/logo_york.jpg');
+}
+
+.York .headerBox__heroImage{
+    background-image: url('../images/hero_images/hero_image_york.png');
+}
+
+
+.York .headerBox__title::after{
+    content: 'SQUAD TRIPS YORK';
+}
+
+.York .headerBox__subtitle::after{
+    content: 'Book Rugby League World Cup 2021 official tickets, accommodation and experiences - and have an unforgettable trip to the vibrant culture and welcoming atmosphere of York, and the tournament’s opening weekend.';
+}
+
+.York .footerBox__copyright::before{
+    content: '';
+}
+
+.Leeds .nav__cityLogo{
+    background-image: url('../images/city_logos/logo_leeds.jpg');
+}
+
+.Leeds .headerBox__heroImage{
+    background-image: url('../images/hero_images/hero_image_leeds.png');
+}
+
+
+.Leeds .headerBox__title::after{
+    content: 'SQUAD TRIPS LEEDS';
+}
+
+.Leeds .headerBox__subtitle::after{
+    content: 'Book Rugby League World Cup 2021 official tickets, accommodation and experiences - and have an unforgettable trip to the vibrant culture and welcoming atmosphere of Leeds, and the tournament’s opening weekend.';
+}
+
+.Leeds .footerBox__copyright::before{
+    content: '';
+}
+
+.Liverpool .nav__cityLogo{
+    background-image: url('../images/city_logos/logo_liverpool.jpg');
+}
+
+.Liverpool .headerBox__heroImage{
+    background-image: url('../images/hero_images/hero_image_liverpool.png');
+}
+
+
+.Liverpool .headerBox__title::after{
+    content: 'SQUAD TRIPS LIVERPOOL';
+}
+
+.Liverpool .headerBox__subtitle::after{
+    content: 'Book Rugby League World Cup 2021 official tickets, accommodation and experiences - and have an unforgettable trip to the vibrant culture and welcoming atmosphere of Liverpool, and the tournament’s opening weekend.';
+}
+
+.Liverpool .footerBox__copyright::before{
+    content: '';
+}
+
+
+.Coventry .nav__cityLogo{
+    background-image: url('../images/city_logos/logo_coventry.png');
+}
+
+.Coventry .headerBox__heroImage{
+    background-image: url('../images/hero_images/hero_image_coventry.png');
+}
+
+
+.Coventry .headerBox__title::after{
+    content: 'SQUAD TRIPS COVENTRY';
+}
+
+.Coventry .headerBox__subtitle::after{
+    content: 'Book Rugby League World Cup 2021 official tickets, accommodation and experiences - and have an unforgettable trip to the vibrant culture and welcoming atmosphere of Coventry, and the tournament’s opening weekend.';
+}
+
+.Coventry .footerBox__copyright::before{
+    content: '';
+}
+
+
+.Sheffield .nav__cityLogo{
+    background-image: url('../images/city_logos/logo_sheffield.png');
+    background-size: 120%;
+}
+
+.Sheffield .headerBox__heroImage{
+    background-image: url('../images/hero_images/hero_image_sheffield.png');
+}
+
+
+.Sheffield .headerBox__title::after{
+    content: 'SQUAD TRIPS SHEFFIELD';
+}
+
+.Sheffield .headerBox__subtitle::after{
+    content: 'Book Rugby League World Cup 2021 official tickets, accommodation and experiences - and have an unforgettable trip to the vibrant culture and welcoming atmosphere of Sheffield, and the tournament’s opening weekend.';
+}
+
+.Sheffield .footerBox__copyright::before{
+    content: '';
+}
